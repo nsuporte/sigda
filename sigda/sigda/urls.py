@@ -22,4 +22,7 @@ from proacademico import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('registar/', views.registar, name='registar'),
+    path('detalhe/<int:obra_id>/', views.detalhe, name='detalhe'),
+
 ]

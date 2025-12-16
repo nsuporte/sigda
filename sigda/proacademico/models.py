@@ -27,7 +27,7 @@ class Obra(models.Model):
     def __str__(self):
         return f"{self.titulo} by {self.autor}"
     
-class ArquivoObra(models.Model):
+class Arquivo(models.Model):
     obra = models.ForeignKey(Obra, on_delete=models.CASCADE)
     arquivo = models.FileField(upload_to='arquivos/obras/%Y/%m/%d/')
     descricao = models.CharField(max_length=255, blank=True)

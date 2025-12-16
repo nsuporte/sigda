@@ -1,36 +1,43 @@
 {% extends 'base.html' %}
 
 {% block breadcrumb %}
-  <li class="breadcrumb-item active">Obras</li>
-  <li class="breadcrumb-item"><a href="#">Obras</a></li>
+<li class="breadcrumb-item active">Obras</li>
+<li class="breadcrumb-item"><a href="#">Obras</a></li>
 {% endblock %}
 
 {% block content %}
-  <table class="table">
-    <thead class="table-dark">
-      <tr>
-        <th>Titulo</th>
-        <th>Categoria</th>
-        <th>Autor</th>
-        <th>Ano de publicacao</th>
-        <th>Data de criacao</th>
-        <th>Estado</th>   
-      </tr>
-    </thead>
-    <tbody>
-      {% for obra in obras %}
-        <tr>
-          <td>
-            <a href="">{{ obra.titulo }}</a>
-            <small class="text-muted d-block">{{ obra.resumo }}</small>
-          </td>
-          <td class="align-middle">{{ obra.categoria }}</td>
-          <td class="align-middle">{{ obra.autor }}</td>
-          <td class="align-middle">{{ obra.ano_publicacao }}</td>
-          <td class="align-middle">{{ obra.criado_em }}</td>
-          <td class="align-middle">{{ obra.estado }}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th>Titulo</th>
+      <th>Categoria</th>
+      <th>Autor</th>
+      <th>Ano de publicacao</th>
+      <th>Data de criacao</th>
+      <th>Estado</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <div class="mb-4">
+      <a href="{% url 'registar'%}" class="btn btn-primary">Nova obra</a>
+    </div>
+    {% for obra in obras %}
+    <tr>
+      <td>
+        <a href="">{{ obra.titulo }}</a>
+        <small class="text-muted d-block">{{ obra.resumo }}</small>
+      </td>
+      <td class="align-middle">{{ obra.categoria }}</td>
+      <td class="align-middle">{{ obra.autor }}</td>
+      <td class="align-middle">{{ obra.ano_publicacao }}</td>
+      <td class="align-middle">{{ obra.criado_em }}</td>
+      <td class="align-middle">{{ obra.estado }}</td>
+      <td class="align-middle">
+        <a href="{% url 'detalhe' obra.id %}" class="btn btn-sm btn-info">Detalhes</a>
+      </td> 
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
