@@ -3,21 +3,35 @@
 
 {% block content %}
 <h1>{{ obra.titulo }}</h1>
-<p><strong>Categoria:</strong> {{ obra.categoria }}</p>
-<p><strong>Descrição:</strong> {{ obra.resumo }}</p>
 <p><strong>Autor:</strong> {{ obra.autor }}</p>
+<p><strong>Categoria:</strong> {{ obra.categoria }}</p>
+<p><strong>Estado:</strong> {{ obra.estado }}</p>
 <p><strong>Data de Publicação:</strong> {{ obra.ano_publicacao }}</p>
 
-{%for arquivo in arquivos%}
+<p><strong>Resumo:</strong> {{ obra.resumo }}</p>
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">{{arquivo.enviado_em}}</h5>
-    <p class="card-text">{{arquivo.arquivo}}</p>
-    <a href="#" class="card-link">Card link</a>
-    <a href="#" class="card-link">Another link</a>
-  </div>
-</div>
-
-{%endfor%}
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Nome</th>
+      <th>Arquivo</th>
+      <th>Data de Publicacao</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for arquivo in arquivos%}
+    <tr>
+      <td>
+        {{ arquivo.nome }}
+        <small class="text-muted d-block">{{ arquivo.descricao }}</small>
+      </td>
+      <td class="align-middle">{{arquivo.arquivo}}</td>
+      <td class="align-middle">{{arquivo.enviado_em}}</td>
+      <td class="align-middle"><a href="{{ arquivo.arquivo.url }}" class="btn btn-primary">Download</a></td>
+      <td></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
