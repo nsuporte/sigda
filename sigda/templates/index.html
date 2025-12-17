@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<table class="table">
+<table class="table table-striped">
   <thead class="table-dark">
     <tr>
       <th>Titulo</th>
@@ -25,8 +25,7 @@
     {% for obra in obras %}
     <tr>
       <td>
-        <a href="">{{ obra.titulo }}</a>
-        <small class="text-muted d-block">{{ obra.resumo }}</small>
+        {{ obra.titulo }}
       </td>
       <td class="align-middle">{{ obra.categoria }}</td>
       <td class="align-middle">{{ obra.autor }}</td>
