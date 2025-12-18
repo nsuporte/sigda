@@ -10,10 +10,10 @@
   <thead class="table-dark">
     <tr>
       <th>Titulo</th>
-      <th>Categoria</th>
       <th>Autor</th>
-      <th>Ano de publicacao</th>
-      <th>Data de criacao</th>
+      <th>Categoria</th>
+      <th>Ano de publicacão</th>
+      <th>Data de criacão</th>
       <th>Estado</th>
       <th></th>
     </tr>
@@ -27,14 +27,14 @@
       <td>
         {{ obra.titulo }}
       </td>
-      <td class="align-middle">{{ obra.categoria }}</td>
       <td class="align-middle">{{ obra.autor }}</td>
+      <td class="align-middle">{{ obra.categoria }}</td>
       <td class="align-middle">{{ obra.ano_publicacao }}</td>
       <td class="align-middle">{{ obra.criado_em }}</td>
       <td class="align-middle">{{ obra.estado }}</td>
       <td class="align-middle">
         <a href="{% url 'detalhe' obra.id %}" class="btn btn-sm btn-info">Detalhes</a>
-      </td> 
+      </td>
     </tr>
     {% endfor %}
   </tbody>

@@ -11,10 +11,9 @@
 <p><strong>Resumo:</strong> {{ obra.resumo }}</p>
 
 <table class="table">
-  <thead class="thead-inverse">
+  <thead class="table-dark">
     <tr>
       <th>Nome do arquivo</th>
-      <th>Descrição</th>
       <th>Data de Publicação</th>
       <th></th>
     </tr>
@@ -22,10 +21,7 @@
   <tbody>
     {%for arquivo in arquivos%}
     <tr>
-      <td>
-        {{ arquivo.nomearquivo }}
-      </td>
-      <td class="align-middle">{{arquivo.descricao}}</td>
+      <td class="align-middle">{{arquivo.nomearquivo}}</td>
       <td class="align-middle">{{arquivo.enviado_em}}</td>
       <td class="align-middle"><a href="{{ arquivo.arquivo.url }}" class="btn btn-primary">Download</a></td>
       <td></td>

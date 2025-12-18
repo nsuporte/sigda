@@ -31,7 +31,6 @@ class Obra(models.Model):
 class Arquivo(models.Model):
     obra = models.ForeignKey(Obra, on_delete=models.CASCADE)
     arquivo = models.FileField(upload_to='arquivos/obras/%Y/%m/%d/')
-    descricao = models.CharField(max_length=255, blank=True)
     enviado_em = models.DateTimeField(auto_now_add=True)
     
     def nomearquivo(self):
