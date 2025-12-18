@@ -1,3 +1,4 @@
+import os
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -29,10 +30,9 @@ class Obra(models.Model):
     
 class Arquivo(models.Model):
     obra = models.ForeignKey(Obra, on_delete=models.CASCADE)
-    nome = models.CharField(max_length=200,blank=True)
     arquivo = models.FileField(upload_to='arquivos/obras/%Y/%m/%d/')
     descricao = models.CharField(max_length=255, blank=True)
     enviado_em = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"Arquivo for {self.obra.titulo}"
+    
+    def nomearquivo(self):
+        return os.path.basename(self.arquivo.name)
