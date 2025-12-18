@@ -1,5 +1,14 @@
 {% extends "base.html" %}
-{% block title %}Detalhe da Obra{% endblock %}
+
+{% block title %}
+  {{ obra.titulo }} - {{ block.super }}
+{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a href="{% url 'index' %}">Obras</a></li>
+  <li class="breadcrumb-item active">{{ obra.titulo }}</li>
+{% endblock %}
+
 
 {% block content %}
 <h1>{{ obra.titulo }}</h1>

@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
+{% block title %}Obras registadas{% endblock %}
+
+
 {% block breadcrumb %}
 <li class="breadcrumb-item active">Obras</li>
-<li class="breadcrumb-item"><a href="#">Obras</a></li>
 {% endblock %}
 
 {% block content %}
@@ -19,9 +21,10 @@
     </tr>
   </thead>
   <tbody>
-    <div class="mb-4">
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-2">
       <a href="{% url 'registar'%}" class="btn btn-primary">Nova obra</a>
     </div>
+
     {% for obra in obras %}
     <tr>
       <td>
