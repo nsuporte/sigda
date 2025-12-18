@@ -13,9 +13,9 @@
 <table class="table">
   <thead class="thead-inverse">
     <tr>
-      <th>Nome</th>
-      <th>Arquivo</th>
-      <th>Data de Publicacao</th>
+      <th>Nome do arquivo</th>
+      <th>Descrição</th>
+      <th>Data de Publicação</th>
       <th></th>
     </tr>
   </thead>
@@ -23,10 +23,9 @@
     {%for arquivo in arquivos%}
     <tr>
       <td>
-        {{ arquivo.nome }}
-        <small class="text-muted d-block">{{ arquivo.descricao }}</small>
+        {{ arquivo.nomearquivo }}
       </td>
-      <td class="align-middle">{{arquivo.arquivo}}</td>
+      <td class="align-middle">{{arquivo.descricao}}</td>
       <td class="align-middle">{{arquivo.enviado_em}}</td>
       <td class="align-middle"><a href="{{ arquivo.arquivo.url }}" class="btn btn-primary">Download</a></td>
       <td></td>
