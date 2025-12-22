@@ -4,11 +4,11 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Categoria(models.Model):
-    name = models.CharField(max_length=100)
+    nome = models.CharField(max_length=100)
     descricao = models.TextField()
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.nome}"
     
 class Obra(models.Model):
     ESTADO = [

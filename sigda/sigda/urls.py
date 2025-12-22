@@ -24,9 +24,9 @@ from proacademico import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('registar/', views.registar, name='registar'),
-    path('detalhe/<int:obra_id>/', views.detalhe, name='detalhe'),
-
+    path('registar_obra/', views.registar_obra, name='registar_obra'),
+    path('detalhe_obra/<int:obra_id>/', views.detalhe_obra, name='detalhe_obra'),
+    path('registar_arquivo/<int:obra_id>/', views.registar_arquivo, name='registar_arquivo'),
 ]
 
 if settings.DEBUG:
