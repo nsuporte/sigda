@@ -22,7 +22,7 @@
   </thead>
   <tbody>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-2">
-      <a href="{% url 'registar'%}" class="btn btn-primary">Nova obra</a>
+      <a href="{% url 'registar_obra'%}" class="btn btn-primary">Nova obra</a>
     </div>
 
     {% for obra in obras %}
@@ -31,12 +31,12 @@
         {{ obra.titulo }}
       </td>
       <td class="align-middle">{{ obra.autor }}</td>
-      <td class="align-middle">{{ obra.categoria }}</td>
+      <td class="align-middle">{{ obra.categoria.nome}}</td>
       <td class="align-middle">{{ obra.ano_publicacao }}</td>
       <td class="align-middle">{{ obra.criado_em }}</td>
       <td class="align-middle">{{ obra.estado }}</td>
       <td class="align-middle">
-        <a href="{% url 'detalhe' obra.id %}" class="btn btn-sm btn-info">Detalhes</a>
+        <a href="{% url 'detalhe_obra' obra.id %}" class="btn btn-sm btn-info">Detalhes</a>
       </td>
     </tr>
     {% endfor %}
