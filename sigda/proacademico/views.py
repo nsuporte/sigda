@@ -1,7 +1,8 @@
 from django.shortcuts import redirect, render
-from .models import Categoria, Obra, Arquivo
+from .models import Categoria, Obra, Arquivo, User
 
 # Create your views here.
+
 def index(request):
     obras = Obra.objects.all()
     return render(request, 'index.html', {'obras': obras})
@@ -14,7 +15,7 @@ def detalhe_obra(request, obra_id):
 def registar_obra(request):
     if request.method == 'POST':
         titulo = request.POST['titulo']
-        autor = request.user
+        autor = User.objects.first()
         categoria_id = request.POST['categoria']
         categoria = Categoria.objects.get(id=categoria_id)
         ano_publicacao = request.POST['ano_publicacao']

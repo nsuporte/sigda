@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="{% url 'index' %}">Utilizador</a></li>
+<li class="breadcrumb-item active">Novo utilizador</li>
+{% endblock %}
+
+{% block content %}
+
+<form method="post" class="row g-3 needs-validation" novalidate>
+  {% csrf_token %}
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" placeholder="Nome" name="nome">
+    <label for="floatingInput">Nome</label>
+  </div>  
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" placeholder="Apelido" name="apelido">
+    <label for="floatingInput">Apelido</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" placeholder="Nome de utilizador" name="utilizador">
+    <label for="floatingInput">Nome de utilizador</label>
+  </div>  
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="floatingInput" placeholder="Email" name="email">
+    <label for="floatingInput">Email</label>
+  </div>
+  <div class="form-floating mb-3">
+    <input type="password" class="form-control" id="floatingInput" placeholder="Senha" name="Senha">
+    <label for="floatingInput">Senha</label>
+  </div>  
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-primary me-md-2" type="submit">Registar - se</button>
+    <button class="btn btn-primary" type="reset">Limpar</button>
+  </div>  
+
+
+</form>
+{% endblock %}
